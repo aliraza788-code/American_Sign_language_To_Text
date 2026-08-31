@@ -1,0 +1,180 @@
+/*
+ * index.css
+ * =========
+ * Poori app ki GLOBAL styling. main.jsx (asal mein App.jsx) mein ek
+ * dafa import hoti hai, is liye ye har component par apna asar
+ * dalti hai.
+ */
+
+:root {
+  --bg: #171b2e;
+  --panel: #1c2138;
+  --text-box: #182035;
+  --green: #3ddc84;
+  --green-hover: #2fc873;
+  --red: #ef4a4a;
+  --muted: #8b91a8;
+  --white: #f2f3f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.page {
+  width: 100%;
+  max-width: 620px;
+}
+
+.app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 26px;
+  margin: 0 0 24px 0;
+}
+
+/* ---- Camera box + guide-box ka rang (boxState ke hisaab se) ---- */
+.camera-box {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  border: 4px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.camera-box.box-state-confident {
+  border-color: var(--green);
+}
+
+.camera-box.box-state-unsure {
+  border-color: var(--red);
+}
+
+.display-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.error-text {
+  color: var(--red);
+  font-size: 14px;
+}
+
+.confidence-text {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.status-text {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ---- Buttons ---- */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: var(--green);
+  color: #0c1420;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: var(--green-hover);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.stop-btn {
+  background: var(--red);
+  color: #2a0a0a;
+}
+
+.stop-btn:hover {
+  background: #e13939;
+}
+
+.stop-btn.active,
+button.active {
+  border-color: #fff;
+}
+
+/* ---- Text output ---- */
+.label {
+  align-self: flex-start;
+  font-weight: 700;
+  margin-top: 26px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.text-output {
+  width: 100%;
+  min-height: 70px;
+  background: var(--text-box);
+  border-radius: 14px;
+  padding: 20px;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  word-break: break-word;
+}
+
+/* ---- Recording playback ---- */
+.recording-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recorded-video {
+  width: 100%;
+  border-radius: 14px;
+  margin-top: 10px;
+  background: #000;
+}
