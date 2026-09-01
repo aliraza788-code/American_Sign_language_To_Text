@@ -9,9 +9,7 @@ venv/
 
 # Model files -- bade hote hain, Git ke liye theek nahi (isay kahin aur
 # host karke ya Git-LFS se manage karte hain)
-ml_assets/*.keras
 ml_assets/*.task
-ml_assets/*.json
 
 # OS junk files
 .DS_Store
